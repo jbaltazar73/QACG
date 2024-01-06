@@ -1,0 +1,25 @@
+# language: es
+
+@login
+Característica: Iniciar sesión en ERP
+
+Antecedentes:
+    Dado Que estoy en la página de login de ERP
+
+  @loginValido
+  Escenario: Sincronizar Proveedor
+    Cuando Ingreso mis credenciales válidas de ERP
+    Y Hago click en el botón de inicio de sesión de ERP
+    Entonces Se muestra la página principal ERP
+    Y doy click en el botón "Navegador" de la página "Home"
+    Y doy click en la opción "EjecucionDeDesarrollos" de la página "Home" 
+    Y doy click en el icono "TaskMange" de la página "ServiciosEnLinea"
+    Y doy click en el icono "TaskExecute" de la página "ServiciosEnLinea"
+    Entonces ingreso "XXPO007-1" en el campo "TaskCode" de la página "ServiciosEnLinea" 
+    Y doy click en el botón "Execute" de la página "ServiciosEnLinea" en segunda ventana
+    Entonces ingreso "BABY O SA de CV" en campo "SupplierName" de form "Execution Form"
+    Y doy click en el botón "Execute" de form "Execution Form"
+    Y guardo el task number de la ventana emergente
+    Y doy click en el botón "Continue" de la página "TaskExecute"
+    Y doy click en el botón "ExecutionLog" de la página "ServiciosEnLinea"
+    Entonces espero "10" segundos

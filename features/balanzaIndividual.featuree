@@ -1,0 +1,36 @@
+# language: es
+
+@login
+Característica: Iniciar sesión en ERP
+
+Antecedentes:
+    Dado Que estoy en la página de login de ERP
+
+  @loginValido
+  Escenario: Iniciar sesión en ERP
+    Cuando Ingreso mis credenciales válidas de ERP
+    Y Hago click en el botón de inicio de sesión de ERP
+    Entonces Se muestra la página principal ERP
+    Y doy click en el botón "Navegador" de la página "Home"
+    Y doy click en la opción "EjecucionDeDesarrollos" de la página "Home" 
+    Y doy click en el icono "TaskMange" de la página "ServiciosEnLinea"
+    Y doy click en el icono "TaskExecute" de la página "ServiciosEnLinea"
+    Entonces ingreso "XXGL029" en el campo "TaskCode" de la página "ServiciosEnLinea" 
+    Y doy click en el botón "Execute" de la página "ServiciosEnLinea" en segunda ventana
+    Y doy click en el icono "Buscar" de la página "ServiciosEnLinea" para el campo "Compañia" 
+    E ingreso "Compañia" en el campo "coaSegmentName" de la página "ServiciosEnLinea" en ventana SegmentParameter
+    Y doy click en el botón "Query" de la página "ServiciosEnLinea" en ventana SegmentParameter
+    Y doy click en la opción "01" de la página "ServiciosEnLinea" en ventana SegmentParameter
+    Y doy click en el icono "Buscar" de la página "ServiciosEnLinea" para el campo "PeriodF"
+    E ingreso "Nov-23" en el campo "PeriodName" de la página "BalancePeriod"
+    Y doy click en el botón "Query" de la página "BalancePeriod"
+    Y doy click en la opción "Nov-23" de la página "BalancePeriod" para el campo "PeriodName" 
+    Y doy click en el icono "Buscar" de la página "BalancePeriod" para el campo "PeriodT"
+    E ingreso "Nov-23" en el campo "PeriodName" de la página "BalancePeriod" para el campo "PeriodT"
+    Y doy click en el botón "Query" de la página "BalancePeriod" para el campo "PeriodT"
+    Y doy click en la opción "Nov-23" de la página "BalancePeriod" para el campo "PeriodT" 
+    Y doy click en el botón "Execute" de la página "TaskExecute"
+    Y doy click en el botón "Continue" de la página "TaskExecute"
+    #Entonces espero "10" segundos
+    Y doy click en el botón "ExecutionLog" de la página "ServiciosEnLinea"
+    Y doy click en el botón "ExecutionResultDownload" de la página "ExecutionLog"

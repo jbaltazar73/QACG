@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                git branch: 'main', credentialsId: 'Server_Jenkins', url: 'https://github.com/daniel-garciaQACG/Demo-Pruebas.git'
+                sh 'npm install'
+            }
+        }
+        stage('Run Tests') {
+            parallel {
+                stage('Login Test') {
+                    steps {
+                        sh 'npm run test "@login"'
+                    }
+                }
+                stage('Remove Products Test') {
+                    steps {
+                        sh 'npm run test "@removerProductos"'
+                    }
+                }
+                stage('Add Products Test') {
+                    steps {
+                        sh 'npm run test "@agregarProductos"'
+                    }
+                }
+                stage('Buy Cart Test') {
+                    steps {
+                        sh 'npm run test "@comprarCarrito"'
+                    }
+                }
+            }
+        }
+    }
+}

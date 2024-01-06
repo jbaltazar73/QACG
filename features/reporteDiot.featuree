@@ -1,0 +1,34 @@
+# language: es
+@ERP @regression
+ 
+Característica: Flujo ERP
+ 
+Antecedentes:
+    Dado Que estoy en la página de login de ERP
+    Cuando Ingreso mis credenciales válidas en ERP "ncarrillo@mnyl.com.mx" y "Prueb@22"
+    Y Hago click en el botón de inicio de sesión de ERP
+    Entonces Se muestra la página principal ERP
+       
+    @ReporteDIOT
+    Escenario: Flujo Reporte DIOT
+      Y doy click en el botón "Navegador" de la página "Home"
+      Y doy click en la opción "EjecucionDeDesarrollos" de la página "Home" 
+      Y doy click en el icono "TaskMange" de la página "ServiciosEnLinea"
+      Y doy click en el icono "TaskExecute" de la página "ServiciosEnLinea"
+      Entonces ingreso "XXGL038" en el campo "TaskCode" de la página "ServiciosEnLinea" 
+      Y doy click en el botón "Query" de la página "ServiciosEnLinea" en segunda ventana
+      Y doy click en lupa para campo "LEDGER"
+      Entonces selecciono la opción "L_SMNYL" en el campo "Ledger" de form "Execution Form"
+      Y doy click en lupa para campo "PeriodF"
+      Entonces Escribo "Oct-22" en campo "periodName" de ventana "PERIODF"
+      Y doy click en boton "Query1" de ventana "PERIOD"
+      Y doy click fila de periodo1 "Oct-22" de ventana "PERIOD"
+      Y doy click en lupa para campo "PeriodT"
+      Entonces Escribo "Oct-22" en campo "periodName" de ventana "PERIODT"
+      Y doy click en boton "Query2" de ventana "PERIOD"
+      Y doy click fila de periodo2 "Oct-22" de ventana "PERIOD"
+      Y doy click en el botón "Execute" del form "Execution Form"
+      Y doy click en el botón "Continue" de la ventana emergente con el numero de Task
+      Y doy click en el icono "ExecutionLog" de la página "ServiciosEnLinea"
+      Y espero "5" segundos
+      Y doy click en el opcion "ExecutionResultDownload" de la página "ExecutionLog"

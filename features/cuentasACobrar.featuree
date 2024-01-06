@@ -1,0 +1,21 @@
+# language: es
+@ERP @regression
+ 
+Característica: Flujo ERP
+ 
+Antecedentes:
+    Dado Que estoy en la página de login de ERP
+    #Cuando Ingreso mis credenciales válidas en ERP "ncarrillo@mnyl.com.mx" y "Prueb@22O"
+    Cuando Ingreso mis credenciales válidas en ERP "ibarroetag@mnyl.com.mx" y "Prueb@22O"
+    Y Hago click en el botón de inicio de sesión de ERP
+    Entonces Se muestra la página principal ERP
+       
+    @ReporteDIOT
+    Escenario: Flujo Cuentas a Cobrar
+      Y doy click en el botón "Navegador" de la página "Home"
+      Y doy click en la opción "CuentasaCobrar" de la página "Home" 
+      Y doy click en la opción "Facturacion" de la página "Home" 
+      Y doy click en la icono "Tareas" de la página "Facturacion" 
+      Y doy click en el opción "crear Transaccion" de la página "ServiciosEnLinea"
+
+

@@ -1,0 +1,29 @@
+# language: es
+
+@ERP
+
+Característica: Solicitar anticipo
+
+    Antecedentes:
+        Dado Que estoy en la página de login de ERP
+        Cuando Ingreso mis credenciales válidas de ERP
+        Y Hago click en el botón de inicio de sesión de ERP
+        Entonces Se muestra la página principal ERP
+        Y doy click en el botón "Navegador" de la página "Home"
+
+    Escenario: Solicitar anticipo de efectivo
+        Cuando doy click en el botón Yo de la página "Home"
+        Y luego doy click en el botón Gastos de la página "Home"
+        Entonces doy click en el botón Anticipos de efectivo de la página "Gastos"
+        Y doy click en el botón Solicitar anticipo de efectivo de la página "Gastos"
+        Y doy click en el campo de texto Importe de anticipo y escribo "1,000" de la página "SolicitarAnticipoEfectivo"
+        Y doy click en el campo de texto Finalidad y escribo "CAPACITACIÓN" de la página "SolicitarAnticipoEfectivo"
+        Y doy click en el campo Fecha incial de vije y escribo la fecha del día actual de la página "SolicitarAnticipoEfectivo"
+        Y doy click en el campo Fecha final de vije y escribo la fecha del día final del viaje de la página "SolicitarAnticipoEfectivo"
+        Y doy click en el botón Enviar de la página "SolicitarAnticipoEfectivo"
+        Entonces se crea el anticipo y se muestra la página "SolicitarAnticipoEfectivo"
+
+
+
+        
+        
